@@ -4,9 +4,9 @@ const userScore_span = document.getElementById("user-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
-const rock_div = document.getElementById("rock");
-const paper_div = document.getElementById("paper");
-const scissors_div = document.getElementById("scissors");
+const rock_div = document.getElementById("r");
+const paper_div = document.getElementById("p");
+const scissors_div = document.getElementById("s");
 
 
 function getComputerChoice() {
@@ -24,15 +24,18 @@ function convertToWord(letter){
 function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
-    computerScore_span = computerScore;
-    result_p.innerHTML = "WINNER!!!: " + convertToWord(userChoice) + " destroys " + convertToWord(computerChoice) + "!"
+    computerScore_span.innerHTML = computerScore;
+    result_p.innerHTML = `Huzzah! ${convertToWord(userChoice)} destroys ${convertToWord(computerChoice)} !`;
 
 }
 
-function lose() {
+function lose(userChoice, computerChoice) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
-    userScore_span = userScore;}
+    userScore_span.innerHTML = userScore;
+    result_p.innerHTML = `Awww No! ${convertToWord(computerChoice)} destroyed by ${convertToWord(userChoice)} !`;
+
+}
 
 function draw() {
     
