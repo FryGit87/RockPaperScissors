@@ -25,7 +25,7 @@ function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `Huzzah! ${convertToWord(userChoice)} destroys ${convertToWord(computerChoice)} !`;
+    result_p.innerHTML = `Huzzah! Your ${convertToWord(userChoice)} destroys ${convertToWord(computerChoice)} !`;
 
 }
 
@@ -33,12 +33,12 @@ function lose(userChoice, computerChoice) {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML = `Awww No! ${convertToWord(computerChoice)} destroyed by ${convertToWord(userChoice)} !`;
+    result_p.innerHTML = `Awww No! ${convertToWord(computerChoice)} destroyed by  your ${convertToWord(userChoice)} !`;
 
 }
 
-function draw() {
-    
+function draw(userChoice, computerChoice) {
+    result_p.innerHTML = `DRAW! Comp's ${convertToWord(computerChoice)} and your ${convertToWord(userChoice)} are friends!`;
 }
 
 
